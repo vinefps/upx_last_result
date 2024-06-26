@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+  <link rel="stylesheet" href="src/styles/header.css" />
+  <title>EcoImpacto</title>
+</head>
+
+<body>
+  <header class="forest-image">
+    <video autoplay muted loop id="background-video">
+      <source type="video/mp4"
+        src="https://www.googleapis.com/drive/v3/files/1pC3CBn_2-s2swB8gmluoLs7uqtkMD4oG?alt=media&key=AIzaSyDZeT813S9ZcPa7PaqW6nD8qVNV1qBmj6A">
+      Seu navegador não suporta vídeos HTML5.
+    </video>
+    <nav id="navbar">
+      <i class="fa-solid fa-seedling" id="nav_logo">EcoImpacto</i>
+      <ul id="nav_list">
+        <li class="nav-item active">
+          <a href="#home">Início</a>
+        </li>
+        <li class="nav-item">
+          <a href="#calculadora">Calculadora CO2</a>
+        </li>
+        <li class="nav-item">
+          <a href="#dashboard">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a href="./casos-de-uso.html">Histórico</a>
+        </li>
+      </ul>
+    </nav>
+    <section id="home">
+      <div id="home-title">
+        <h1 id="title">EcoImpacto</h1>
+        <h2 id="sub-title">Reduzindo Pegadas de Carbono Corporativas</h2>
+      </div>
+    </section>
+  </header>
+  <section id="carbon-footprint">
+    <div class="content-wrapper">
+      <h2 class="section-title">O que é pegada de carbono?</h2>
+      <p class="section-description">
+        Atividades do dia a dia emitem, direta ou indiretamente, gases causadores das mudanças climáticas. Use a
+        calculadora para descobrir sua pegada de carbono e quantas árvores precisa plantar para compensar essas
+        emissões!
+      </p>
+      <button id="learn-more-btn">Saiba Mais</button>
+    </div>
+    <div class="image-wrapper">
+      <img src="./src/images/usina_nuclear.webp" alt="Image representing carbon footprint">
+    </div>
+  </section>
+
+  <!-- Modal Structure -->
+  <div id="carbon-footprint-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2 style="color:#4CAF50">O que é Pegada de Carbono?</h2><br />
+      <p>A pegada de carbono é uma medida que calcula a quantidade de gases de efeito estufa emitidos, direta ou
+        indiretamente, por uma pessoa, organização, evento ou produto. Esses gases contribuem para as mudanças
+        climáticas, afetando o equilíbrio do nosso planeta.</p><br />
+      <p>Medir e reduzir a pegada de carbono é fundamental para mitigar os impactos ambientais e promover a
+        sustentabilidade. Isso pode ser feito através da adoção de práticas mais ecológicas.</p><br /><br />
+
+      <!-- Abas -->
+      <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'EnergiaRenovavel')">Uso de Energia Renovável</button>
+        <button class="tablinks" onclick="openTab(event, 'ReducaoConsumo')">Redução do Consumo de Recursos</button>
+        <button class="tablinks" onclick="openTab(event, 'PlantioArvores')">Compensação das Emissões</button>
+        <button class="tablinks" onclick="openTab(event, 'Reciclagem')">Reciclagem</button>
+        <button class="tablinks" onclick="openTab(event, 'TransporteSustentavel')">Transporte Sustentável</button>
+      </div>
+
+      <div class="modal-space">
+        <!-- Conteúdo das Abas -->
+        <div id="EnergiaRenovavel" class="tabcontent">
+          <h3>Uso de Energia Renovável</h3>
+          <img src="./src//images/energia_renovavel.webp" alt="Energia Renovável" class="modal-img">
+          <h3 style="color:#4CAF50">Energia Renovável: A Chave para um Futuro Sustentável</h3>
+          <p>
+            O uso de energia renovável é uma das maneiras mais eficazes de reduzir a pegada de carbono. Fontes de
+            energia
+            como solar, eólica, hidráulica e biomassa são inesgotáveis e não emitem gases de efeito estufa durante sua
+            operação. Investir em tecnologias renováveis não só diminui a dependência de combustíveis fósseis, mas
+            também
+            promove a criação de empregos verdes, melhora a segurança energética e contribui para a saúde pública ao
+            reduzir a poluição do ar.</p>
+        </div>
+
+        <div id="ReducaoConsumo" class="tabcontent">
+          <h3>Redução do Consumo de Recursos</h3>
+          <img src="./src/images/reducao_recursos.webp" alt="Redução do Consumo de Recursos" class="modal-img">
+          <h3 style="color:#4CAF50">Reduzindo o Consumo de Recursos: Um Passo Essencial para a Sustentabilidade</h3>
+          <p>
+            Reduzir o consumo de recursos é crucial para diminuir a pressão sobre o meio ambiente e mitigar as mudanças
+            climáticas. Isso inclui a utilização eficiente de água, energia e materiais em todos os setores da
+            sociedade. Práticas como a adoção de tecnologias de eficiência energética, o uso de produtos reciclados, a
+            redução do desperdício e o apoio a uma economia circular são fundamentais. Ao consumir menos recursos,
+            preservamos os ecossistemas e garantimos que as futuras gerações tenham acesso a um planeta saudável.</p>
+        </div>
+
+        <div id="PlantioArvores" class="tabcontent">
+          <h3>Compensação das Emissões através do Plantio de Árvores</h3>
+          <img src="./src//images//compensacao_emissao.webp" alt="Plantio de Árvores" class="modal-img">
+          <h3 style="color:#4CAF50">Compensação das Emissões: Restaurando o Equilíbrio do Carbono</h3>
+          <p>
+            A compensação das emissões envolve a neutralização dos gases de efeito estufa emitidos por meio de projetos
+            que removem ou evitam essas emissões em outro lugar. Isso pode ser feito através de iniciativas como o
+            plantio
+            de árvores, projetos de energia renovável e conservação de florestas. Ao investir em projetos de compensação
+            de carbono, empresas e indivíduos podem equilibrar suas emissões inevitáveis, contribuindo para a mitigação
+            das mudanças climáticas e o apoio ao desenvolvimento sustentável.</p>
+        </div>
+      </div>
+
+      <div id="Reciclagem" class="tabcontent">
+        <h3>Reciclagem</h3>
+        <img src="./src//images//reciclagem.webp" alt="Reciclagem" class="modal-img">
+        <h3 style="color:#4CAF50">Reciclagem: Transformando Resíduos em Recursos</h3>
+        <p>
+          A reciclagem é uma prática fundamental para a redução da pegada de carbono. Ao reciclar materiais como papel,
+          plástico, vidro e metais, economizamos energia, diminuímos a necessidade de extração de recursos naturais e
+          reduzimos a quantidade de resíduos enviados para aterros. A reciclagem também cria empregos e estimula a
+          inovação em tecnologias de gestão de resíduos. Adotar hábitos de reciclagem em casa e no trabalho é um passo
+          simples, mas poderoso, em direção a um futuro mais sustentável.</p>
+      </div>
+
+      <div id="TransporteSustentavel" class="tabcontent">
+        <h3>Transporte Sustentável</h3>
+        <img src="./src//images//transporte.webp" alt="Transporte Sustentável" class="modal-img">
+        <h3 style="color:#4CAF50">Transporte Sustentável: Movendo-se para um Futuro Verde</h3>
+        <p>
+          O transporte sustentável é vital para reduzir as emissões de carbono e melhorar a qualidade do ar nas cidades.
+          Isso inclui o uso de veículos elétricos, transporte público eficiente, bicicletas e caminhadas.
+          Infraestruturas
+          como ciclovias, estações de carregamento para veículos elétricos e sistemas de caronas compartilhadas
+          incentivam
+          a adoção de modos de transporte mais limpos. Promover o transporte sustentável não só diminui a pegada de
+          carbono, mas também melhora a saúde pública e a qualidade de vida urbana.</p>
+      </div>
+    </div>
+  </div>
+  <main class="content" id="calculadora">
+    <div class="calculator">
+      <div class="progress-bar">
+        <div class="step active" data-step="1">O que é?</div>
+        <div class="step" data-step="2">Energia Elétrica</div>
+        <div class="step" data-step="3">Combustíveis Fósseis</div>
+        <div class="step" data-step="4">Transporte</div>
+        <div class="step" data-step="5">Resíduos</div>
+        <div class="step" data-step="6">Resultado</div>
+      </div>
+      <div class="step-content">
+        <div class="step-pane active" data-step="1" style="background-image: url('background1.jpg');">
+          <div class="content-container">
+            <h2>O que é?</h2>
+            <p>As atividades empresariais podem emitir gases causadores das mudanças climáticas. Use esta calculadora
+              para descobrir a pegada de carbono da sua empresa e quantas árvores são necessárias para compensar essas
+              emissões!</p>
+            <button onclick="nextStep()">Iniciar Calculadora</button>
+          </div>
+        </div>
+        <div class="step-pane" data-step="2" style="background-image: url('./src/images/rede_eletrica.webp');">
+          <div class="content-container">
+            <h2>Energia Elétrica</h2>
+            <label for="electricity">Consumo mensal de energia elétrica (kWh):</label>
+            <input type="number" id="electricity" name="electricity">
+            <button onclick="nextStep()">Próximo</button>
+          </div>
+        </div>
+        <div class="step-pane" data-step="3" style="background-image: url('./src//images/combustiveis.webp');">
+          <div class="content-container">
+            <h2>Combustíveis Fósseis</h2>
+            <label for="fuel">Consumo mensal de combustíveis fósseis (litros):</label>
+            <input type="number" id="fuel" name="fuel">
+            <button onclick="nextStep()">Próximo</button>
+          </div>
+        </div>
+        <div class="step-pane" data-step="4" style="background-image: url('./src//images//transporte.webp');">
+          <div class="content-container">
+            <h2>Transporte</h2>
+            <label for="transport">Distância percorrida por transporte (km):</label>
+            <input type="number" id="transport" name="transport">
+            <button onclick="nextStep()">Próximo</button>
+          </div>
+        </div>
+        <div class="step-pane" data-step="5" style="background-image: url('./src//images/residuos.webp');">
+          <div class="content-container">
+            <h2>Resíduos</h2>
+            <label for="waste">Quantidade de resíduos gerados (kg):</label>
+            <input type="number" id="waste" name="waste">
+            <button onclick="calculateResults()">Calcular</button>
+          </div>
+        </div>
+        <div class="step-pane" data-step="6" style="background-image: url('./src//images//resultado.webp');">
+          <div class="content-container">
+            <h2>Resultado</h2>
+            <p id="results"></p>
+            <button onclick="resetCalculator()">Reiniciar Calculadora</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section id="dashboard">
+      <section id="dashboard-section">
+        <div class="dashboard-wrapper">
+          <h2>Dashboard de Emissões de Carbono</h2>
+          <div class="charts-container">
+            <canvas id="carbonChart"></canvas>
+            <canvas id="treesChart"></canvas>
+            <canvas id="trendsChart"></canvas>
+            <canvas id="sourceBreakdownChart"></canvas>
+          </div>
+        </div>
+      </section>
+      <strong id="treesNeededText">Árvores necessárias: 50</strong>
+    </section>
+    <section id="news-section">
+      <div class="news-wrapper">
+        <h2>Últimas notícias sobre Meio Ambiente</h2>
+        <div class="news-container" id="news-container">
+          <!-- Notícias serão inseridas aqui via JavaScript -->
+        </div>
+      </div>
+    </section>
+    <section id="qa-session">
+      <div class="qa-wrapper">
+        <h2>Sessões de Perguntas e Respostas com Especialistas</h2>
+        <div class="qa-container">
+          <div class="qa-item">
+            <h3 onclick="toggleAnswer(this)">O que é a pegada de carbono? <span class="arrow">▼</span></h3>
+            <p class="qa-answer">A pegada de carbono é a medida que calcula a quantidade de gases de efeito estufa
+              emitidos, direta ou indiretamente, por uma pessoa, organização, evento ou produto.</p>
+          </div>
+          <div class="qa-item">
+            <h3 onclick="toggleAnswer(this)">Por que é importante reduzir a pegada de carbono? <span
+                class="arrow">▼</span></h3>
+            <p class="qa-answer">Reduzir a pegada de carbono é essencial para mitigar os impactos das mudanças
+              climáticas, proteger o meio ambiente e garantir um futuro sustentável para as próximas gerações.</p>
+          </div>
+          <div class="qa-item">
+            <h3 onclick="toggleAnswer(this)">Como posso calcular minha pegada de carbono? <span class="arrow">▼</span>
+            </h3>
+            <p class="qa-answer">Existem diversas calculadoras online que permitem calcular sua pegada de carbono com
+              base em seu consumo de energia, transporte, dieta e outros fatores.</p>
+          </div>
+          <div class="qa-item">
+            <h3 onclick="toggleAnswer(this)">O que é compensação de carbono? <span class="arrow">▼</span></h3>
+            <p class="qa-answer">Compensação de carbono é a prática de neutralizar suas emissões de carbono investindo
+              em projetos que reduzem ou removem a quantidade equivalente de CO2 da atmosfera.</p>
+          </div>
+          <div class="qa-item">
+            <h3 onclick="toggleAnswer(this)">Quais são as fontes de energia renovável mais comuns? <span
+                class="arrow">▼</span></h3>
+            <p class="qa-answer">As fontes de energia renovável mais comuns incluem a energia solar, eólica, hídrica
+              (hidroelétrica) e biomassa. Essas fontes são sustentáveis e emitem pouco ou nenhum carbono.</p>
+          </div>
+          <div class="qa-item">
+            <h3 onclick="toggleAnswer(this)">Como as empresas podem reduzir suas pegadas de carbono? <span
+                class="arrow">▼</span></h3>
+            <p class="qa-answer">As empresas podem reduzir suas pegadas de carbono adotando práticas de eficiência
+              energética, investindo em energia renovável, promovendo a reciclagem e reduzindo o desperdício.</p>
+          </div>
+          <div class="qa-item">
+            <h3 onclick="toggleAnswer(this)">Qual é o impacto das dietas vegetarianas na pegada de carbono? <span
+                class="arrow">▼</span></h3>
+            <p class="qa-answer">Dietas vegetarianas geralmente têm uma pegada de carbono menor do que dietas que
+              incluem carne, pois a produção de carne é altamente intensiva em carbono.</p>
+          </div>
+          <div class="qa-item">
+            <h3 onclick="toggleAnswer(this)">O que são créditos de carbono? <span class="arrow">▼</span></h3>
+            <p class="qa-answer">Créditos de carbono são certificados emitidos para projetos que reduzem ou evitam a
+              emissão de CO2. Esses créditos podem ser comprados por empresas ou indivíduos para compensar suas próprias
+              emissões.</p>
+          </div>
+          <div class="qa-item">
+            <h3 onclick="toggleAnswer(this)">Como a reciclagem ajuda a reduzir a pegada de carbono? <span
+                class="arrow">▼</span></h3>
+            <p class="qa-answer">A reciclagem ajuda a reduzir a pegada de carbono diminuindo a necessidade de extração e
+              processamento de matérias-primas, o que economiza energia e reduz as emissões de CO2.</p>
+          </div>
+          <div class="qa-item">
+            <h3 onclick="toggleAnswer(this)">O que é uma economia circular? <span class="arrow">▼</span></h3>
+            <p class="qa-answer">Uma economia circular é um sistema econômico que visa eliminar o desperdício e a
+              poluição, mantendo produtos e materiais em uso pelo maior tempo possível através da reutilização,
+              reciclagem e recuperação.</p>
+          </div>
+        </div>
+        <div class="qa-form">
+          <h3>Envie sua Pergunta</h3>
+          <form id="qa-form" action="#">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="question">Pergunta:</label>
+            <textarea id="question" name="question" rows="4" required></textarea>
+            <button type="submit">Enviar Pergunta</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <h4>Quem Somos</h4>
+        <ul>
+          <li><a href="#">Onde Atuamos</a></li>
+          <li><a href="#">A Iniciativa Verde</a></li>
+          <li><a href="#">O Que Fazemos</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Institucional</h4>
+        <ul>
+          <li><a href="#">Arquivo</a></li>
+          <li><a href="#">Contato</a></li>
+          <li><a href="#">Doações</a></li>
+          <li><a href="#">Eventos</a></li>
+          <li><a href="#">Perguntas Frequentes</a></li>
+          <li><a href="#">Política de Privacidade</a></li>
+          <li><a href="#">EN</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Fale Conosco</h4>
+      </div>
+      <div class="footer-column">
+        <h4>Redes Sociais</h4>
+        <p>Assine nossa Newsletter</p>
+        <form action="#">
+          <input type="text" placeholder="Digite seu nome">
+          <input type="email" placeholder="Digite seu e-mail">
+          <button type="submit">ASSINAR</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2023 Iniciativa Verde. É permitida a reprodução do conteúdo deste site, desde que citada a fonte. CNPJ
+        08.606.505/0001-06</p>
+      <a href="#">Voltar ao topo</a>
+    </div>
+  </footer>
+  <script src="./src/javascript/script.js" type="application/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+</body>
+
+</html>
